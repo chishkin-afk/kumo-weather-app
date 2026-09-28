@@ -4,14 +4,13 @@ import { User } from '../model/types';
 
 const USER_STALE_TIME = 1000 * 60 * 30;
 
-export const useUser = (id: string): UseQueryResult<User, Error> => {
+export const useUser = (): UseQueryResult<User, Error> => {
   return useQuery({
-    queryKey: ['user', id],
+    queryKey: ['user', 'self'],
     queryFn: async () => {
-      const response = await clientApi.get<User>(`/users/${id}`);
+      const response = await clientApi.get<User>(`/me`);
       return response.data;
     },
-    enabled: !!id,
     staleTime: USER_STALE_TIME,
   });
 };

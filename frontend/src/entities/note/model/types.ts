@@ -7,3 +7,7 @@ export interface Note {
   };
   createdAt: Date;
 }
+
+export interface NoteList {
+  notes: Note[];
+}

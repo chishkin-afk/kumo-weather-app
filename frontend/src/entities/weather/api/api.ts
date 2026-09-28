@@ -10,13 +10,16 @@ type WeeklyForecastDto = Omit<WeeklyForecast, 'week'> & {
 const FORECAST_STALE_TIME = 1000 * 60 * 30;
 
 export const useDailyForecast = (
-  locationKey: number,
+  location: `${number},${number}`,
 ): UseQueryResult<DailyForecast, Error> => {
   return useQuery({
-    queryKey: ['daily', 'forecast', locationKey],
+    queryKey: ['daily', 'forecast', location],
     queryFn: async () => {
+      const searchParams = new URLSearchParams();
+      searchParams.set('q', location);
+
       const response = await clientApi.get<DailyForecastDto>(
-        `/weather/daily/${locationKey}`,
+        `/weather/daily?${searchParams.toString()}`,
       );
 
       const convertedData: DailyForecast = {
@@ -26,19 +29,21 @@ export const useDailyForecast = (
 
       return convertedData;
     },
-    enabled: locationKey != null && !Number.isNaN(locationKey),
+    enabled: !!location,
     staleTime: FORECAST_STALE_TIME,
   });
 };
 
 export const useWeeklyForecast = (
-  locationKey: number,
+  location: `${number},${number}`,
 ): UseQueryResult<WeeklyForecast, Error> => {
   return useQuery({
-    queryKey: ['weekly', 'forecast', locationKey],
+    queryKey: ['weekly', 'forecast', location],
     queryFn: async () => {
+      const searchParams = new URLSearchParams();
+      searchParams.set('q', location);
       const response = await clientApi.get<WeeklyForecastDto>(
-        `/weather/weekly/${locationKey}`,
+        `/weather/weekly?${searchParams.toString()}`,
       );
 
       const convertedData: WeeklyForecast = {
@@ -50,7 +55,7 @@ export const useWeeklyForecast = (
 
       return convertedData;
     },
-    enabled: locationKey != null && !Number.isNaN(locationKey),
+    enabled: !!location,
     staleTime: FORECAST_STALE_TIME,
   });
 };
