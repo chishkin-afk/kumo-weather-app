@@ -1,10 +1,10 @@
-import Field from '@/shared/ui/Field/Field';
+import IconSort from '@/shared/ui/icons/IconSort/IconSort';
 
 export default function HomePage() {
   return (
     <div>
       Home
-      <Field placeholder="title..." type="text" />
+      <IconSort />
     </div>
   );
 }
