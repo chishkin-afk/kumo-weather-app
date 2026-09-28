@@ -1,10 +1,10 @@
-import CustomLink from '@/shared/ui/CustomLink/CustomLink';
+import Field from '@/shared/ui/Field/Field';
 
 export default function HomePage() {
   return (
     <div>
       Home
-      <CustomLink href="#">features</CustomLink>
+      <Field placeholder="title..." type="text" />
     </div>
   );
 }
