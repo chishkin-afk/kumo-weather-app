@@ -1,3 +1,5 @@
+@use '@/app/variables' as *;
+
 :where(*, *::before, *::after) {
   padding: 0;
   margin: 0;
@@ -21,6 +23,9 @@ body {
 
   font-family: 'Manrope';
   font-weight: 400;
+  color: $text-main;
+
+  background: $bg-color;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {

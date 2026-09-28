@@ -1,9 +1,10 @@
-import Button from '@/shared/ui/Button/Button';
+import CustomLink from '@/shared/ui/CustomLink/CustomLink';
 
 export default function HomePage() {
   return (
     <div>
-      Home <Button>click me</Button>
+      Home
+      <CustomLink href="#">features</CustomLink>
     </div>
   );
 }
