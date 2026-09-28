@@ -1,21 +1,15 @@
+import { QueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 
 export const clientApi = axios.create({
-  baseURL: process.env.BASE_BACKEND_URL,
+  baseURL: process.env.NEXT_PUBLIC_BASE_BACKEND_URL,
   withCredentials: true,
 });
 
 clientApi.interceptors.response.use(
   response => response,
-  error => {
-    if (error.response?.status === 401) {
-      redirect('/login');
-    }
-
-    return Promise.reject(error);
-  },
+  error => error,
 );
 
 export async function getServerApi() {
@@ -33,3 +27,5 @@ export async function getServerApi() {
 
   return serverApi;
 }
+
+export const queryClient = new QueryClient();
