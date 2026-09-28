@@ -1,8 +1,7 @@
-import { queryClient } from '@/shared/api/instance';
-import { QueryClientProvider } from '@tanstack/react-query';
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import './globals.scss';
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'Kumo weather app',
@@ -18,9 +17,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={`${manrope.className}`}>
       <body>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

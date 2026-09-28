@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-:where(html) {
+html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   -moz-tab-size: 4;
@@ -12,12 +12,15 @@
   line-height: 1.5;
 }
 
-:where(body) {
+body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+
+  font-family: 'Manrope';
+  font-weight: 400;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
