@@ -1,0 +1,32 @@
+@use '@/app/variables' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  min-height: 60px;
+  gap: 50px;
+
+  position: fixed;
+  top: 0;
+
+  background: #00000025;
+  backdrop-filter: blur(25px);
+
+  border-bottom: $border;
+
+  padding-inline: 130px;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
