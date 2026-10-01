@@ -2,8 +2,7 @@
 
 import Button from '@/shared/ui/Button/Button';
 import CustomLink from '@/shared/ui/CustomLink/CustomLink';
-import { IconBurger } from '@/shared/ui/icons';
-import IconClosed from '@/shared/ui/icons/IconClosed/IconClosed';
+import { IconBurger, IconClosed } from '@/shared/ui/icons';
 import Logo from '@/shared/ui/Logo/Logo';
 import clsx from 'clsx';
 import { useRouter } from 'next/navigation';

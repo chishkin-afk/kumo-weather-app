@@ -1,0 +1,59 @@
+@use '@/app/variables' as *;
+
+.section {
+  width: 100%;
+  padding-inline: 130px;
+
+  margin-top: 116px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  filter: blur(var(--blur, 0px));
+  will-change: filter;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: $white;
+}
+
+.weather {
+  &__icon {
+    stroke: $primary;
+    stroke-width: 4px;
+
+    width: 130px;
+    height: 130px;
+  }
+
+  &__temperature {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: $white;
+  }
+
+  &__unit {
+    color: $blue;
+  }
+}
+
+.description {
+  margin-top: 0;
+
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: $gray;
+
+  &__accent {
+    color: $white;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}

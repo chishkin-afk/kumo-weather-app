@@ -1,10 +1,5 @@
-import IconSort from '@/shared/ui/icons/IconSort/IconSort';
+import HeroSection from '@/widgets/hero-section/ui/HeroSection';
 
 export default function HomePage() {
-  return (
-    <div>
-      Home
-      <IconSort />
-    </div>
-  );
+  return <HeroSection />;
 }
