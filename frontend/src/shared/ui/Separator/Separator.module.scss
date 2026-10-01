@@ -1,0 +1,10 @@
+@use '@/app/variables' as *;
+
+.separator {
+  width: 100%;
+  height: 60px;
+
+  border-radius: 25px 25px 0 0;
+  border-top: $border;
+  background: $bg-color;
+}

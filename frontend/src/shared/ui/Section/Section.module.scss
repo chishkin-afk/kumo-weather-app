@@ -2,18 +2,16 @@
 @use '@/app/variables' as *;
 
 .section {
-  min-height: 100lvh;
+  min-height: 95lvh;
   width: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding-top: 100px;
   padding-inline: 130px;
 
   @include mixins.media(860px) {
-    padding-top: 0;
     padding-inline: 30px;
   }
 }
