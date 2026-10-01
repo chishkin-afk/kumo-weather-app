@@ -13,12 +13,12 @@ export default function HeroSection() {
 
       const scrolled = Math.max(0, window.scrollY);
 
-      const maxBlur = 10;
+      const maxBlur = 25;
       const maxScroll = 300;
       const progress = Math.min(scrolled / maxScroll, 1);
       const blur = progress * maxBlur;
 
-      sectionRef.current.style.setProperty('--blur', `${blur}px`);
+      sectionRef.current.style.filter = `blur(${blur}px)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -46,6 +46,7 @@ export default function HeroSection() {
         </div>
       </div>
       <Image
+        className={styles.image}
         src="/hero-image.png"
         alt="hero image"
         width={576}
