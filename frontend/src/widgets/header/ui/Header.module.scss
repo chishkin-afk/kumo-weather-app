@@ -1,3 +1,4 @@
+@use '@/app/mixins';
 @use '@/app/variables' as *;
 
 .header {
@@ -18,15 +19,73 @@
   border-bottom: $border;
 
   padding-inline: 130px;
+
+  z-index: 2999;
+
+  @include mixins.media(860px) {
+    padding-inline: 30px;
+  }
 }
 
 .nav {
   display: flex;
   gap: 50px;
+
+  @include mixins.media(860px) {
+    gap: 20px;
+    flex-direction: column;
+  }
 }
 
 .actions {
   display: flex;
   align-items: center;
   gap: 50px;
+
+  @include mixins.media(860px) {
+    flex-direction: column;
+    align-items: baseline;
+    visibility: hidden;
+    gap: 30px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 3000;
+    background: $black;
+
+    width: 100vw;
+    height: 100lvh;
+    padding: 30px;
+
+    opacity: 0;
+
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.burger {
+  width: 22px;
+  height: 22px;
+  user-select: none;
+
+  &__icon {
+    stroke: $white;
+    fill: $white;
+  }
+
+  display: none;
+  z-index: 3001;
+
+  @include mixins.media(860px) {
+    display: flex;
+  }
 }

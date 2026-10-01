@@ -1,3 +1,4 @@
+export { default as IconBurger } from './IconBurger/IconBurger';
 export { default as IconFilter } from './IconFilter/IconFilter';
 export { default as IconHumidity } from './IconHumidity/IconHumidity';
 export { default as IconSort } from './IconSort/IconSort';
