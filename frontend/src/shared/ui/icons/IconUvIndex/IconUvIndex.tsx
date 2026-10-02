@@ -1,6 +1,11 @@
-export default function IconUvIndex() {
+interface IconUvIndexProps {
+  className?: string;
+}
+
+export default function IconUvIndex({ className }: IconUvIndexProps) {
   return (
     <svg
+      className={className}
       width="22"
       height="22"
       viewBox="0 0 22 22"

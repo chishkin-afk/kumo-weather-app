@@ -1,6 +1,11 @@
-export default function IconWind() {
+interface IconWindProps {
+  className?: string;
+}
+
+export default function IconWind({ className }: IconWindProps) {
   return (
     <svg
+      className={className}
       width="22"
       height="22"
       viewBox="0 0 22 22"

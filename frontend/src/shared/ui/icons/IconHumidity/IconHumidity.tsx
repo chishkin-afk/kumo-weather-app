@@ -1,6 +1,11 @@
-export default function IconHumidity() {
+interface IconHumidityProps {
+  className?: string;
+}
+
+export default function IconHumidity({ className }: IconHumidityProps) {
   return (
     <svg
+      className={className}
       width="22"
       height="22"
       viewBox="0 0 22 22"

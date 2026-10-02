@@ -1,6 +1,11 @@
-export default function IconTemp() {
+interface IconTempProps {
+  className?: string;
+}
+
+export default function IconTemp({ className }: IconTempProps) {
   return (
     <svg
+      className={className}
       width="22"
       height="22"
       viewBox="0 0 22 22"
