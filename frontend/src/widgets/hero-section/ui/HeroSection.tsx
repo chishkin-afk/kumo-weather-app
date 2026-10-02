@@ -11,7 +11,7 @@ export default function HeroSection() {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
-      const scrolled = Math.max(0, window.scrollY);
+      const scrolled = Math.max(0, window.scrollY - 100);
 
       const maxBlur = 25;
       const maxScroll = 300;

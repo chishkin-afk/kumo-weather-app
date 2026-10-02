@@ -3,7 +3,6 @@
 
 .section {
   background: $black;
-  margin-bottom: 100px;
 }
 
 .stats {
@@ -12,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  gap: 16.5px;
+  gap: 20px;
 
   @include mixins.media(860px) {
     grid-template-columns: repeat(3, 1fr);

@@ -10,7 +10,7 @@ import {
   IconWind,
 } from '@/shared/ui/icons';
 import { useEffect, useRef } from 'react';
-import styles from './Statistics.module.scss';
+import styles from './StatisticsSection.module.scss';
 
 export default function StatisticsSection() {
   const statsRef = useRef(null);

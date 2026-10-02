@@ -1,0 +1,31 @@
+@use '@/app/variables' as *;
+
+.weather {
+  min-width: 145px;
+  height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 20px;
+
+  border: $border;
+  border-radius: 10px;
+
+  h3 {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: $text-main;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  svg {
+    stroke: $primary;
+  }
+}
