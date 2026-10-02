@@ -1,3 +1,4 @@
+import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 import { ReactNode } from 'react';
 
@@ -29,6 +30,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         }}
       />
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import styles from './Logo.module.scss';
 
 export default function Logo() {
-  return <p className={styles.logo}>kumo</p>;
+  return <span className={styles.logo}>kumo</span>;
 }

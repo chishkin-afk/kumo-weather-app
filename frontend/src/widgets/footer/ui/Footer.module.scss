@@ -1,0 +1,40 @@
+@use '@/app/mixins';
+@use '@/app/variables' as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  background: $black;
+
+  padding-inline: 130px;
+
+  width: 100%;
+  min-height: 330px;
+
+  @include mixins.media(860px) {
+    padding-inline: 30px;
+  }
+}
+
+.title {
+  p {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: $gray;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  gap: 20px;
+
+  @include mixins.media(860px) {
+    margin-top: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
