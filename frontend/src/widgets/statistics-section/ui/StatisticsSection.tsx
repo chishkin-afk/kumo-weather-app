@@ -9,29 +9,33 @@ import {
   IconUvIndex,
   IconWind,
 } from '@/shared/ui/icons';
+import clsx from 'clsx';
 import { useEffect, useRef } from 'react';
 import styles from './StatisticsSection.module.scss';
 
 export default function StatisticsSection() {
-  const statsRef = useRef(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(
-        entrie => {
-          if (entrie.isIntersecting) {
-            entrie.target.classList.add(styles.playAnim);
-            observer.unobserve(entrie.target);
-            console.log('sdf');
-          }
-        },
-        {
-          threshold: 0.4,
-        },
-      );
-    });
+    const stats = statsRef.current;
+    if (!stats) return;
 
-    if (statsRef.current) observer.observe(statsRef.current);
+    const items = stats.querySelectorAll(`.${styles.item}`);
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.playAnim);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    items.forEach(item => observer.observe(item));
+
     return () => observer.disconnect();
   }, []);
 
@@ -40,11 +44,28 @@ export default function StatisticsSection() {
       <Separator />
       <Section className={styles.section} id="stats" title="STATISTICS">
         <div ref={statsRef} className={styles.stats}>
-          <Metric title="humidity" Icon={IconHumidity} value="47" unit="%" />
-          <Metric title="wind" Icon={IconWind} value="4" unit="mph" />
-          <Metric title="uv" Icon={IconUvIndex} value="4" />
           <Metric
-            className={styles.metricFull}
+            className={styles.item}
+            title="humidity"
+            Icon={IconHumidity}
+            value="47"
+            unit="%"
+          />
+          <Metric
+            className={styles.item}
+            title="wind"
+            Icon={IconWind}
+            value="4"
+            unit="mph"
+          />
+          <Metric
+            className={styles.item}
+            title="uv"
+            Icon={IconUvIndex}
+            value="4"
+          />
+          <Metric
+            className={clsx(styles.item, styles.metricFull)}
             title="avg temp"
             Icon={IconTemp}
             value="+14"

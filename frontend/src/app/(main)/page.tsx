@@ -1,5 +1,5 @@
 import Section from '@/shared/ui/Section/Section';
-import ForecastSection from '@/widgets/forecast-section/ui/ForecastSection';
+import { ForecastSection } from '@/widgets/forecast-section';
 import { HeroSection } from '@/widgets/hero-section';
 import { StatisticsSection } from '@/widgets/statistics-section';
 

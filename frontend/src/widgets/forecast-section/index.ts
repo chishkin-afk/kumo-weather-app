@@ -1,1 +1,1 @@
-export { default as ForecastSection } from './ui/Forecast.module.scss';
+export { default as ForecastSection } from './ui/ForecastSection';
