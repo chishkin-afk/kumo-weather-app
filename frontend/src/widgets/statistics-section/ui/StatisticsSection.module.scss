@@ -3,6 +3,7 @@
 
 .section {
   background: $black;
+  overflow-x: hidden;
 }
 
 .stats {
@@ -33,11 +34,11 @@
 @keyframes appear {
   from {
     opacity: 0;
-    transform: translateX(30%);
+    transform: translateY(30%);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 

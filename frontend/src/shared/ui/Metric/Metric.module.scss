@@ -2,7 +2,7 @@
 @use '@/app/variables' as *;
 
 .metric {
-  min-width: 200px;
+  min-width: 0;
   height: 200px;
 
   display: flex;
@@ -16,7 +16,6 @@
   border-radius: 10px;
 
   @include mixins.media(860px) {
-    min-width: 100px;
     height: 100px;
 
     padding: 10px;
