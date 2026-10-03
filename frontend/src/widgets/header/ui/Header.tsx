@@ -12,7 +12,7 @@ import styles from './Header.module.scss';
 
 interface HeaderProps {
   className?: string;
-  links: Link[];
+  links?: Link[];
   linkButton?: Link;
 }
 
@@ -42,7 +42,7 @@ export default function Header(props: HeaderProps) {
       </button>
       <div className={clsx(styles.actions, isOpenMobile ? styles.opened : '')}>
         <nav className={styles.nav}>
-          {props.links.map(link => (
+          {props.links?.map(link => (
             <CustomLink
               onClick={() => setIsOpenMobile(false)}
               key={link.path}
