@@ -1,5 +1,10 @@
+import Link from 'next/link';
 import styles from './Logo.module.scss';
 
 export default function Logo() {
-  return <span className={styles.logo}>kumo</span>;
+  return (
+    <Link href="/" className={styles.logo}>
+      kumo
+    </Link>
+  );
 }

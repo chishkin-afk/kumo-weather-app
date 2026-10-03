@@ -6,7 +6,7 @@ import { StatisticsSection } from '@/widgets/statistics-section';
 export default function HomePage() {
   return (
     <>
-      <Section id="weather" title="">
+      <Section id="weather">
         <HeroSection />
       </Section>
       <StatisticsSection />

@@ -1,10 +1,15 @@
 import Button from '@/shared/ui/Button/Button';
 import Field from '@/shared/ui/Field/Field';
+import clsx from 'clsx';
 import styles from './RegisterForm.module.scss';
 
-export default function RegisterForm() {
+interface RegisterFormProps {
+  className?: string;
+}
+
+export default function RegisterForm({ className }: RegisterFormProps) {
   return (
-    <form className={styles.form}>
+    <form className={clsx(styles.form, className)}>
       <Field
         className={styles.field}
         placeholder="username..."

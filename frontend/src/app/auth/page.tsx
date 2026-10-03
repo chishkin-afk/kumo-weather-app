@@ -1,10 +1,12 @@
-import { LoginForm } from '@/features/login-form';
-import Section from '@/shared/ui/Section/Section';
+import AuthSection from '@/widgets/auth-section/ui/AuthSection';
 
-export default function AuthPage() {
-  return (
-    <Section title="">
-      <LoginForm />
-    </Section>
-  );
+interface AuthPageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function AuthPage({ searchParams }: AuthPageProps) {
+  const params = await searchParams;
+  const action: 'login' | 'register' =
+    params.action === 'login' ? 'login' : 'register';
+  return <AuthSection action={action} />;
 }

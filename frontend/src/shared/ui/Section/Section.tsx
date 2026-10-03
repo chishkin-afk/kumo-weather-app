@@ -6,7 +6,7 @@ interface SectionProps {
   id?: string;
   className?: string;
   children: ReactNode;
-  title: string;
+  title?: string;
 }
 
 export default function Section(props: SectionProps) {
@@ -14,7 +14,7 @@ export default function Section(props: SectionProps) {
 
   return (
     <section id={id} className={clsx(styles.section, className)}>
-      <h2 className={styles.title}>{title}</h2>
+      {title && <h2 className={styles.title}>{title}</h2>}
       {children}
     </section>
   );
